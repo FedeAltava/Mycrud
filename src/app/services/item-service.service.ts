@@ -6,14 +6,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ItemsServiceService {
     private arrayItems:Item[]=[];
-    private _Items: BehaviorSubject<Item[]>;
-    constructor() {
-        this._Items = new BehaviorSubject<Item[]>([]);
-     }
-     getItems(){
+    private _Items: BehaviorSubject<Item[]>= new BehaviorSubject<Item[]>([]);;
+    constructor() {}
+
+     getItemsObservable(){
         return this._Items.asObservable();
      }
-    addNewProduct(item:Item){
+    addNewProductObservable(item:Item){
         this.arrayItems.push(item);
         this._Items.next(this.arrayItems);
     }

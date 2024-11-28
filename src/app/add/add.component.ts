@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ItemsServiceService } from '../services/item-service.service';
+import { Item } from '../interfaces/item.interface';
 
 @Component({
   selector: 'app-add',
@@ -9,4 +11,7 @@ import { Component } from '@angular/core';
 })
 export class AddComponent {
 
+  constructor(private itemService:ItemsServiceService){}
+  private arrayItems:Item[]=[];
+  
 }
