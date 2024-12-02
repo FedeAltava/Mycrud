@@ -1,1 +1,30 @@
-<p>header works!</p>
+<header class="bg-indigo-600 p-4 shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+     
+      <h1 class="text-white text-2xl font-semibold"><a routerLink="/home" routerLinkActive="text-black" class="text-white hover:text-indigo-300">
+        My Crud
+      </a></h1>
+  
+     
+      <nav>
+        <ul class="flex space-x-6">
+          <li>
+            <a routerLink="/add" routerLinkActive="text-black" class="text-white hover:text-indigo-300">
+              Add Item
+            </a>
+          </li>
+          <li>
+            <a routerLink="/home" routerLinkActive="text-black" class="text-white hover:text-indigo-300">
+              Home
+            </a>
+          </li>
+          <li>
+            <a routerLink="/favorites" routerLinkActive="text-black" class="text-white hover:text-indigo-300">
+              Favorites
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  

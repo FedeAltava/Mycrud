@@ -9,11 +9,12 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { COLORS, MATERIALS, SIZES, TYPES } from '../constants/item-options';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-add',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule,HeaderComponent],
   templateUrl: './add.component.html',
   styleUrl: './add.component.css',
 })
