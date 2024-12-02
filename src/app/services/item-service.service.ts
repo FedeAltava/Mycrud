@@ -6,15 +6,17 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ItemsServiceService {
     private arrayItems:Item[]=[];
-    private _Items: BehaviorSubject<Item[]>= new BehaviorSubject<Item[]>([]);;
+    private _Items: BehaviorSubject<Item[]> = new BehaviorSubject<Item[]>([]);;
     constructor() {}
 
      getItemsObservable(){
         return this._Items.asObservable();
      }
+
     addNewProductObservable(item:Item){
         this.arrayItems.push(item);
         this._Items.next(this.arrayItems);
+        console.log(item);
     }
 
 }
