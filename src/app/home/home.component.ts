@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit{
     this.itemService.ItemsObservable.subscribe(Item =>{
       this.items = Item;
     })
-
   }
-
+  onClickDelete(indice:number){
+    this.itemService.deleteProduct(indice);
+  }
 }

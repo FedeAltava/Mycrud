@@ -10,6 +10,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { COLORS, MATERIALS, SIZES, TYPES } from '../constants/item-options';
 import { HeaderComponent } from '../header/header.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -27,7 +28,8 @@ export class AddComponent {
 
   constructor(
     private itemService: ItemsServiceService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router:Router
   ) {
     this.itemForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -38,6 +40,8 @@ export class AddComponent {
       description: ['', Validators.required]
     });
   }
+
+
 
   addItem() {
     if(this.itemForm.valid){
@@ -52,7 +56,7 @@ export class AddComponent {
       };
       this.itemService.addNewProductObservable(newItem);
     }
-    
+    this.router.navigate(['/home']);
   }
 
 }

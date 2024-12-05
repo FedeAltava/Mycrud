@@ -18,5 +18,8 @@ export class ItemsServiceService {
         this._Items.next(this.arrayItems);
         console.log(item);
     }
-
+    deleteProduct(index:number){
+      this.arrayItems.splice(index,1);
+      this._Items.next(this.arrayItems);
+    }
 }
