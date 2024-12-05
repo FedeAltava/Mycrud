@@ -9,7 +9,7 @@ export class ItemsServiceService {
     private _Items: BehaviorSubject<Item[]> = new BehaviorSubject<Item[]>([]);;
     constructor() {}
 
-     getItemsObservable(){
+     get ItemsObservable(){
         return this._Items.asObservable();
      }
 
