@@ -37,7 +37,8 @@ export class AddComponent {
       size: ['',Validators.required],
       color:['',Validators.required],
       material:['',Validators.required],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
+      price:['',Validators.required]
     });
   }
 
@@ -52,7 +53,8 @@ export class AddComponent {
         size:this.itemForm.value.size,
         color:this.itemForm.value.color,
         material:this.itemForm.value.material,
-        description:this.itemForm.value.description
+        description:this.itemForm.value.description,
+        price:this.itemForm.value.price
       };
       this.itemService.addNewProductObservable(newItem);
     }

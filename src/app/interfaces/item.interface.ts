@@ -6,4 +6,5 @@ export interface Item {
   color: string;
   material: string;
   description: string;
+  price:number;
 }
