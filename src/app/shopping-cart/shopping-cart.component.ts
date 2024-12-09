@@ -3,11 +3,12 @@ import { HeaderComponent } from "../header/header.component";
 import { ItemsServiceService } from '../services/item-service.service';
 import { Item } from '../interfaces/item.interface';
 import { CommonModule } from '@angular/common';
+import { TotalPriceComponent } from "../total-price/total-price.component";
 
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [HeaderComponent,CommonModule],
+  imports: [HeaderComponent, CommonModule, TotalPriceComponent],
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.css'
 })
