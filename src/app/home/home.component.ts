@@ -23,4 +23,7 @@ export class HomeComponent implements OnInit{
   onClickDelete(indice:number){
     this.itemService.deleteProduct(indice);
   }
+  onClickAdd(item:Item){
+    this.itemService.addCartItemObservable(item);
+  }
 }

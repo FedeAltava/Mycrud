@@ -6,12 +6,25 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ItemsServiceService {
     private arrayItems:Item[]=[];
-    private _Items: BehaviorSubject<Item[]> = new BehaviorSubject<Item[]>([]);;
+    private _Items: BehaviorSubject<Item[]> = new BehaviorSubject<Item[]>([]);
+    private arrayCart :Item[]=[];
+    private _ItemCart:BehaviorSubject<Item[]> = new BehaviorSubject<Item[]>([]);
     constructor() {}
+    //Shopping cart array
+    addCartItemObservable(item:Item){
+      this.arrayCart.push(item);
+      this._ItemCart.next(this.arrayCart);
+      console.log(item);
+    }
 
-     get ItemsObservable(){
-        return this._Items.asObservable();
-     }
+    deleteCartProduct(index:number){
+      this.arrayCart.splice(index,1);
+      this._ItemCart.next(this.arrayCart);
+    }
+    get ItemsCartObservable(){
+      return this._ItemCart.asObservable();
+    }
+    //home page array 
 
     addNewProductObservable(item:Item){
         this.arrayItems.push(item);
@@ -22,4 +35,7 @@ export class ItemsServiceService {
       this.arrayItems.splice(index,1);
       this._Items.next(this.arrayItems);
     }
+    get ItemsObservable(){
+      return this._Items.asObservable();
+   }
 }
