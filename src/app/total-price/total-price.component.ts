@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class TotalPriceComponent implements OnInit{
   total:number = 0;
   constructor(private itemService:ItemsServiceService){}
+  
   ngOnInit() {
     this.itemService.ItemsCartObservable
     .pipe(map(items =>{
