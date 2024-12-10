@@ -1,4 +1,4 @@
-<app-header/>
+<app-header (searchValueChange)="onSearchValueChange($event)"></app-header>
 
 <div class="bg-gray-100 min-h-screen p-8">
    
@@ -11,7 +11,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       
       <div
-        *ngFor="let item of items let indice = index"
+        *ngFor="let item of (items| search:searchValue) let indice = index "
         class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow duration-300"
       >
        

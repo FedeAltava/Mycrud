@@ -1,25 +1,56 @@
 <header class="bg-violet-400 p-4 shadow-md">
   <div class="max-w-7xl mx-auto flex justify-between items-center">
-    <h1 class="text-white text-2xl font-semibold">
-      <a routerLink="/home" class="text-black hover:text-indigo-300" routerLinkActive="text-black">
+    <!-- Título -->
+    <h1 class="text-white text-2xl font-semibold flex-shrink-0">
+      <a
+        routerLink="/home"
+        class="text-black hover:text-indigo-300"
+        routerLinkActive="text-black"
+      >
         My Crud
       </a>
     </h1>
 
+    <!-- Input de búsqueda -->
+    <div class="flex-grow px-4">
+      <input
+        type="text"
+        placeholder="Buscar..."
+        name="searchValue"
+        id="search-Value"
+        [(ngModel)]="searchValue"
+        (ngModelChange)="onSearchChange()" 
+        class="w-full p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+      />
+    </div>
+
+    <!-- Navegación -->
     <nav>
       <ul class="flex space-x-6">
         <li>
-          <a routerLink="/add" routerLinkActive="!text-black" class="text-white hover:text-indigo-300">
+          <a
+            routerLink="/add"
+            routerLinkActive="!text-black"
+            class="text-white hover:text-indigo-300"
+          >
             Add Item
           </a>
         </li>
         <li>
-          <a routerLink="/home" routerLinkActive="!text-black" class="text-white hover:text-indigo-300">
+          <a
+            routerLink="/home"
+            routerLinkActive="!text-black"
+            class="text-white hover:text-indigo-300"
+          >
             Home
           </a>
         </li>
         <li>
-          <a routerLink="/cart" routerLinkActive="!text-black" class="text-white hover:text-indigo-300">
+          <a
+            routerLink="/cart"
+            routerLinkActive="!text-black"
+            class="text-white hover:text-indigo-300"
+          >
             Cart
           </a>
         </li>
